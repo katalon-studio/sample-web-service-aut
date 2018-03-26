@@ -35,22 +35,8 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>1.8</java.version>
 
-        <!--<kit.db.driver>org.postgresql.Driver</kit.db.driver>-->
-        <!--<kit.db.type>postgresql</kit.db.type>-->
-        <!--<kit.db.url>localhost/kit</kit.db.url>-->
-        <!--<kit.db.schema>public</kit.db.schema>-->
-        <!--<kit.db.username>postgres</kit.db.username>-->
-        <!--<kit.db.password>postgres</kit.db.password>-->
-
         <springfox-swagger.version>2.7.0</springfox-swagger.version>
         <commons-io.version>2.5</commons-io.version>
-        <!--<liquibase-maven-plugin.version>3.3.2</liquibase-maven-plugin.version>-->
-        <!--<hibernate-jpamodelgen.version>5.2.10.Final</hibernate-jpamodelgen.version>-->
-        <!--<slugify.version>2.1.8</slugify.version>-->
-        <!--<aws-java-sdk-s3.version>1.11.167</aws-java-sdk-s3.version>-->
-        <!--<mime-util.version>2.1.3</mime-util.version>-->
-        <!--<poi.version>3.17</poi.version>-->
-        <!--<supercsv.version>2.4.0</supercsv.version>-->
     </properties>
 
     <dependencies>
@@ -66,18 +52,10 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-actuator</artifactId>
         </dependency>
-        <!--<dependency>-->
-            <!--<groupId>org.springframework.boot</groupId>-->
-            <!--<artifactId>spring-boot-starter-security</artifactId>-->
-        <!--</dependency>-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-mail</artifactId>
         </dependency>
-        <!--<dependency>-->
-            <!--<groupId>org.springframework.security.oauth</groupId>-->
-            <!--<artifactId>spring-security-oauth2</artifactId>-->
-        <!--</dependency>-->
         <dependency>
             <groupId>io.springfox</groupId>
             <artifactId>springfox-swagger2</artifactId>
@@ -88,11 +66,6 @@
             <artifactId>springfox-swagger-ui</artifactId>
             <version>${springfox-swagger.version}</version>
         </dependency>
-
-        <!--<dependency>-->
-            <!--<groupId>com.google.guava</groupId>-->
-            <!--<artifactId>guava</artifactId>-->
-        <!--</dependency>-->
         <dependency>
             <groupId>org.apache.httpcomponents</groupId>
             <artifactId>httpclient</artifactId>
@@ -101,15 +74,6 @@
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
         </dependency>
-        <!--<dependency>-->
-            <!--<groupId>org.liquibase</groupId>-->
-            <!--<artifactId>liquibase-core</artifactId>-->
-        <!--</dependency>-->
-        <!--<dependency>-->
-            <!--<groupId>org.postgresql</groupId>-->
-            <!--<artifactId>postgresql</artifactId>-->
-            <!--<scope>runtime</scope>-->
-        <!--</dependency>-->
         <dependency>
             <groupId>com.h2database</groupId>
             <artifactId>h2</artifactId>
@@ -119,64 +83,6 @@
             <artifactId>commons-io</artifactId>
             <version>${commons-io.version}</version>
         </dependency>
-        <!--<dependency>-->
-            <!--<groupId>org.hibernate</groupId>-->
-            <!--<artifactId>hibernate-jpamodelgen</artifactId>-->
-            <!--<version>${hibernate-jpamodelgen.version}</version>-->
-        <!--</dependency>-->
-        <!--<dependency>-->
-            <!--<groupId>com.github.slugify</groupId>-->
-            <!--<artifactId>slugify</artifactId>-->
-            <!--<version>${slugify.version}</version>-->
-        <!--</dependency>-->
-        <!--<dependency>-->
-            <!--<groupId>com.amazonaws</groupId>-->
-            <!--<artifactId>aws-java-sdk-s3</artifactId>-->
-            <!--<version>${aws-java-sdk-s3.version}</version>-->
-        <!--</dependency>-->
-        <!--<dependency>-->
-            <!--<groupId>eu.medsea.mimeutil</groupId>-->
-            <!--<artifactId>mime-util</artifactId>-->
-            <!--<version>${mime-util.version}</version>-->
-            <!--<exclusions>-->
-                <!--<exclusion>-->
-                    <!--<groupId>org.slf4j</groupId>-->
-                    <!--<artifactId>slf4j-log4j12</artifactId>-->
-                <!--</exclusion>-->
-                <!--<exclusion>-->
-                    <!--<groupId>log4j</groupId>-->
-                    <!--<artifactId>log4j</artifactId>-->
-                <!--</exclusion>-->
-            <!--</exclusions>-->
-        <!--</dependency>-->
-        <!--<dependency>-->
-            <!--<groupId>org.apache.velocity</groupId>-->
-            <!--<artifactId>velocity</artifactId>-->
-        <!--</dependency>-->
-        <!--for logback conditional config-->
-        <!--<dependency>-->
-            <!--<groupId>org.codehaus.janino</groupId>-->
-            <!--<artifactId>janino</artifactId>-->
-        <!--</dependency>-->
-
-        <!--<dependency>-->
-            <!--<groupId>org.apache.poi</groupId>-->
-            <!--<artifactId>poi</artifactId>-->
-            <!--<version>${poi.version}</version>-->
-        <!--</dependency>-->
-
-        <!--<dependency>-->
-            <!--<groupId>org.apache.poi</groupId>-->
-            <!--<artifactId>poi-ooxml</artifactId>-->
-            <!--<version>${poi.version}</version>-->
-        <!--</dependency>-->
-
-        <!--<dependency>-->
-            <!--<groupId>net.sf.supercsv</groupId>-->
-            <!--<artifactId>super-csv</artifactId>-->
-            <!--<version>${supercsv.version}</version>-->
-        <!--</dependency>-->
-
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
@@ -195,45 +101,6 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
-            <!--<plugin>-->
-                <!--<groupId>org.liquibase</groupId>-->
-                <!--<artifactId>liquibase-maven-plugin</artifactId>-->
-                <!--<version>${liquibase-maven-plugin.version}</version>-->
-                <!--<configuration>-->
-                    <!--<driver>${kit.db.driver}</driver>-->
-                    <!--<url>jdbc:${kit.db.type}://${kit.db.url}?currentSchema=${kit.db.schema}</url>-->
-                    <!--<username>${kit.db.username}</username>-->
-                    <!--<password>${kit.db.password}</password>-->
-                    <!--<verbose>true</verbose>-->
-                    <!--<promptOnNonLocalDatabase>false</promptOnNonLocalDatabase>-->
-                <!--</configuration>-->
-                <!--<executions>-->
-                    <!--<execution>-->
-                        <!--<id>update</id>-->
-                        <!--<goals>-->
-                            <!--<goal>update</goal>-->
-                            <!--<goal>updateSQL</goal>-->
-                        <!--</goals>-->
-                        <!--<configuration>-->
-                            <!--<changeLogFile>${basedir}/src/main/resources/liquibase/update.xml</changeLogFile>-->
-                        <!--</configuration>-->
-                    <!--</execution>-->
-                    <!--<execution>-->
-                        <!--<id>sample</id>-->
-                        <!--<goals>-->
-                            <!--<goal>update</goal>-->
-                            <!--<goal>updateSQL</goal>-->
-                        <!--</goals>-->
-                        <!--<configuration>-->
-                            <!--<changeLogFile>${basedir}/src/main/resources/liquibase/sample.xml</changeLogFile>-->
-                        <!--</configuration>-->
-                    <!--</execution>-->
-                <!--</executions>-->
-            <!--</plugin>-->
-            <!--<plugin>-->
-                <!--<groupId>pl.project13.maven</groupId>-->
-                <!--<artifactId>git-commit-id-plugin</artifactId>-->
-            <!--</plugin>-->
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
@@ -264,57 +131,6 @@
                     </execution>
                 </executions>
             </plugin>
-            <!--<plugin>-->
-                <!--<groupId>com.github.eirslett</groupId>-->
-                <!--<artifactId>frontend-maven-plugin</artifactId>-->
-                <!--<version>1.4</version>-->
-                <!--<configuration>-->
-                    <!--<workingDirectory>${basedir}/frontend</workingDirectory>-->
-                <!--</configuration>-->
-                <!--<executions>-->
-                    <!--<execution>-->
-                        <!--<id>install node and npm</id>-->
-                        <!--<goals>-->
-                            <!--<goal>install-node-and-npm</goal>-->
-                        <!--</goals>-->
-                        <!--<phase>generate-resources</phase>-->
-                        <!--<configuration>-->
-                            <!--<nodeVersion>v6.9.5</nodeVersion>-->
-                            <!--<npmVersion>3.10.10</npmVersion>-->
-                        <!--</configuration>-->
-                    <!--</execution>-->
-                    <!--<execution>-->
-                        <!--<id>npm prune</id>-->
-                        <!--<phase>generate-resources</phase>-->
-                        <!--<goals>-->
-                            <!--<goal>npm</goal>-->
-                        <!--</goals>-->
-                        <!--<configuration>-->
-                            <!--<arguments>prune</arguments>-->
-                        <!--</configuration>-->
-                    <!--</execution>-->
-                    <!--<execution>-->
-                        <!--<id>npm install</id>-->
-                        <!--<phase>generate-resources</phase>-->
-                        <!--<goals>-->
-                            <!--<goal>npm</goal>-->
-                        <!--</goals>-->
-                        <!--<configuration>-->
-                            <!--<arguments>install</arguments>-->
-                        <!--</configuration>-->
-                    <!--</execution>-->
-                    <!--<execution>-->
-                        <!--<id>npm run package</id>-->
-                        <!--<phase>generate-resources</phase>-->
-                        <!--<goals>-->
-                            <!--<goal>npm</goal>-->
-                        <!--</goals>-->
-                        <!--<configuration>-->
-                            <!--<arguments>run package</arguments>-->
-                        <!--</configuration>-->
-                    <!--</execution>-->
-                <!--</executions>-->
-            <!--</plugin>-->
         </plugins>
     </build>
 </project>
