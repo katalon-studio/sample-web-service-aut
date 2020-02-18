@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/webservice" xmlns:tns="http://www.example.org/webservice" elementFormDefault="qualified">
+
+	<element name="getUserRequest">
+		<complexType>
+			<sequence>
+				<element name="id" type="long"></element>
+			</sequence>
+		</complexType>
+	</element>
+	
+	<element name="getUserResponse">
+		<complexType>
+			<sequence>
+				<element name="user" type="tns:User"></element>
+			</sequence>
+		</complexType>
+	</element>
+	
+	<element name="getAllUserRequest">
+		<complexType>
+			<sequence>
+				
+			</sequence>
+		</complexType>
+	</element>
+	
+	<element name="getAllUserResponse">		
+		<complexType>
+			<sequence>
+				<element name="user" type="tns:User" minOccurs="0" maxOccurs="unbounded"></element>
+			</sequence>
+		</complexType>
+	</element>
+	
+	<element name="addUserRequest">
+		<complexType>
+			<sequence>
+				<element name="user" type="tns:User"></element>
+			</sequence>
+		</complexType>
+	</element>
+	
+	<element name="addUserResponse">		
+		<complexType>
+			<sequence>
+				<element name="user" type="tns:User"></element>
+			</sequence>
+		</complexType>
+	</element>
+	
+	<element name="updateUserRequest">
+		<complexType>
+			<sequence>
+				<element name="id" type="long"></element>
+				<element name="user" type="tns:User"></element>
+			</sequence>
+		</complexType>
+	</element>
+	
+	<element name="updateUserResponse">		
+		<complexType>
+			<sequence>
+				<element name="user" type="tns:User"></element>
+			</sequence>
+		</complexType>
+	</element>
+	
+	<simpleType name="Gender">
+		<restriction base="string">
+			<enumeration value="MALE"></enumeration>
+			<enumeration value="FEMALE"></enumeration>
+			<enumeration value="UNKNOWN"></enumeration>
+		</restriction>
+	</simpleType>
+
+	<complexType name="User">
+		<sequence>
+			<element name="id" type="long"></element>
+			<element name="username" type="string"></element>
+			<element name="password" type="string"></element>
+			<element name="gender" type="tns:Gender"></element>
+			<element name="age" type="int"></element>
+		</sequence>
+	</complexType>
+</schema>
