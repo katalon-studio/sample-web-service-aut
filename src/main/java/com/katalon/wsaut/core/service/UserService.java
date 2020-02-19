@@ -1,8 +1,9 @@
 package com.katalon.wsaut.core.service;
 
-import com.katalon.wsaut.core.entity.Gender;
 import com.katalon.wsaut.core.entity.User;
 import com.katalon.wsaut.core.repository.UserRepository;
+
+import org.example.webservice.Gender;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

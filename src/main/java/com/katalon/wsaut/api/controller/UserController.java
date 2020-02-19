@@ -1,9 +1,10 @@
 package com.katalon.wsaut.api.controller;
 
 import com.katalon.wsaut.config.constant.Resources;
-import com.katalon.wsaut.core.entity.Gender;
 import com.katalon.wsaut.core.entity.User;
 import com.katalon.wsaut.core.service.UserService;
+
+import org.example.webservice.Gender;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;

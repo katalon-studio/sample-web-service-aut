@@ -1,7 +1,8 @@
 package com.katalon.wsaut.core.repository;
 
-import com.katalon.wsaut.core.entity.Gender;
 import com.katalon.wsaut.core.entity.User;
+
+import org.example.webservice.Gender;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

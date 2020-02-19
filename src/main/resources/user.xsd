@@ -12,7 +12,7 @@
 	<element name="getUserResponse">
 		<complexType>
 			<sequence>
-				<element name="user" type="tns:User"></element>
+				<element name="user" type="tns:UserSOAP"></element>
 			</sequence>
 		</complexType>
 	</element>
@@ -20,7 +20,8 @@
 	<element name="getAllUserRequest">
 		<complexType>
 			<sequence>
-				
+				<element name="gender" type="tns:Gender"></element>
+				<element name="age" type="int"></element>
 			</sequence>
 		</complexType>
 	</element>
@@ -28,7 +29,7 @@
 	<element name="getAllUserResponse">		
 		<complexType>
 			<sequence>
-				<element name="user" type="tns:User" minOccurs="0" maxOccurs="unbounded"></element>
+				<element name="user" type="tns:UserSOAP" minOccurs="0" maxOccurs="unbounded"></element>
 			</sequence>
 		</complexType>
 	</element>
@@ -36,7 +37,7 @@
 	<element name="addUserRequest">
 		<complexType>
 			<sequence>
-				<element name="user" type="tns:User"></element>
+				<element name="user" type="tns:UserSOAP"></element>
 			</sequence>
 		</complexType>
 	</element>
@@ -44,7 +45,7 @@
 	<element name="addUserResponse">		
 		<complexType>
 			<sequence>
-				<element name="user" type="tns:User"></element>
+				<element name="user" type="tns:UserSOAP"></element>
 			</sequence>
 		</complexType>
 	</element>
@@ -53,7 +54,7 @@
 		<complexType>
 			<sequence>
 				<element name="id" type="long"></element>
-				<element name="user" type="tns:User"></element>
+				<element name="age" type="int"></element>
 			</sequence>
 		</complexType>
 	</element>
@@ -61,7 +62,23 @@
 	<element name="updateUserResponse">		
 		<complexType>
 			<sequence>
-				<element name="user" type="tns:User"></element>
+				<element name="user" type="tns:UserSOAP"></element>
+			</sequence>
+		</complexType>
+	</element>
+	
+	<element name="deleteUserRequest">
+		<complexType>
+			<sequence>
+				<element name="id" type="long"></element>			
+			</sequence>
+		</complexType>
+	</element>
+	
+	<element name="deleteUserResponse">		
+		<complexType>
+			<sequence>
+				<element name="notification" type="string"></element>
 			</sequence>
 		</complexType>
 	</element>
@@ -74,13 +91,14 @@
 		</restriction>
 	</simpleType>
 
-	<complexType name="User">
+	<complexType name="UserSOAP">
 		<sequence>
 			<element name="id" type="long"></element>
 			<element name="username" type="string"></element>
 			<element name="password" type="string"></element>
 			<element name="gender" type="tns:Gender"></element>
 			<element name="age" type="int"></element>
+			<element name="avatar" type="base64Binary"></element>
 		</sequence>
 	</complexType>
 </schema>

@@ -3,6 +3,8 @@ package com.katalon.wsaut.core.entity;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
+import org.example.webservice.Gender;
+
 @Entity
 public class User {
 
