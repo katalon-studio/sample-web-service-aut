@@ -1,13 +1,14 @@
 package com.katalon.wsaut.core.service;
 
-import com.katalon.wsaut.core.entity.User;
-import com.katalon.wsaut.core.repository.UserRepository;
+import java.util.List;
 
-import org.example.webservice.Gender;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
+import com.katalon.wsaut.core.entity.Gender;
+import com.katalon.wsaut.core.entity.User;
+import com.katalon.wsaut.core.repository.UserRepository;
+
 
 @Service
 public class UserService {

@@ -3,17 +3,6 @@ package com.katalon.wsaut;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import org.example.webservice.AddUserRequest;
-import org.example.webservice.AddUserResponse;
-import org.example.webservice.DeleteUserRequest;
-import org.example.webservice.DeleteUserResponse;
-import org.example.webservice.GetAllUserRequest;
-import org.example.webservice.GetAllUserResponse;
-import org.example.webservice.GetUserRequest;
-import org.example.webservice.GetUserResponse;
-import org.example.webservice.UpdateUserRequest;
-import org.example.webservice.UpdateUserResponse;
-import org.example.webservice.UserSOAP;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ws.server.endpoint.annotation.Endpoint;
 import org.springframework.ws.server.endpoint.annotation.PayloadRoot;
@@ -21,18 +10,29 @@ import org.springframework.ws.server.endpoint.annotation.RequestPayload;
 import org.springframework.ws.server.endpoint.annotation.ResponsePayload;
 
 import com.katalon.wsaut.core.entity.User;
-import com.katalon.wsaut.core.entity.UserConvertor;
+import com.katalon.wsaut.core.entity.Convertor;
 import com.katalon.wsaut.core.service.UserService;
+import com.katalon.wsaut.webservice.AddUserRequest;
+import com.katalon.wsaut.webservice.AddUserResponse;
+import com.katalon.wsaut.webservice.DeleteUserRequest;
+import com.katalon.wsaut.webservice.DeleteUserResponse;
+import com.katalon.wsaut.webservice.GetAllUserRequest;
+import com.katalon.wsaut.webservice.GetAllUserResponse;
+import com.katalon.wsaut.webservice.GetUserRequest;
+import com.katalon.wsaut.webservice.GetUserResponse;
+import com.katalon.wsaut.webservice.UpdateUserRequest;
+import com.katalon.wsaut.webservice.UpdateUserResponse;
+import com.katalon.wsaut.webservice.UserSOAP;
 
 @Endpoint
 public class SoapWebServiceEndpoint {
-	private static final String NAMESPACE_URI = "http://www.example.org/webservice";
+	private static final String NAMESPACE_URI = "http://www.katalon.com/wsaut/webservice";
 	
 	@Autowired
 	UserService userService;
 	
 	@Autowired
-	UserConvertor convertor;
+	Convertor convertor;
 	
 	@PayloadRoot(namespace = NAMESPACE_URI, localPart = "getUserRequest")
 	@ResponsePayload
@@ -45,9 +45,9 @@ public class SoapWebServiceEndpoint {
 	
 	@PayloadRoot(namespace = NAMESPACE_URI, localPart = "getAllUserRequest")
 	@ResponsePayload
-	public GetAllUserResponse getAllUser(@RequestPayload GetAllUserRequest request) {
+	public GetAllUserResponse getAllUser(@RequestPayload GetAllUserRequest request) {		
 		GetAllUserResponse response = new GetAllUserResponse();
-		List<UserSOAP> result = userService.list(request.getGender(),Integer.valueOf(request.getAge()))
+		List<UserSOAP> result = userService.list(convertor.convertToEntityGender(request.getGender()),Integer.valueOf(request.getAge()))
 										   .stream()
 										   .map(user -> convertor.convertToSOAP(user))
 										   .collect(Collectors.toList());

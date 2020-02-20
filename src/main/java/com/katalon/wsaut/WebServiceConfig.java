@@ -28,7 +28,7 @@ public class WebServiceConfig extends WsConfigurerAdapter{
 		DefaultWsdl11Definition wsdl11Definition = new DefaultWsdl11Definition();
 		wsdl11Definition.setPortTypeName("UserPort");
 		wsdl11Definition.setLocationUri("/ws");
-		wsdl11Definition.setTargetNamespace("http://www.example.org/webservice");
+		wsdl11Definition.setTargetNamespace("http://www.katalon.com/wsaut/webservice");
 		wsdl11Definition.setSchema(schema);
 		return wsdl11Definition;
 	}

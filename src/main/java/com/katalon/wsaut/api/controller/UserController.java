@@ -1,17 +1,25 @@
 package com.katalon.wsaut.api.controller;
 
-import com.katalon.wsaut.config.constant.Resources;
-import com.katalon.wsaut.core.entity.User;
-import com.katalon.wsaut.core.service.UserService;
-
-import org.example.webservice.Gender;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.MediaType;
-import org.springframework.web.bind.annotation.*;
-import org.springframework.web.multipart.MultipartFile;
-
 import java.io.IOException;
 import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
+
+import com.katalon.wsaut.config.constant.Resources;
+import com.katalon.wsaut.core.entity.Gender;
+import com.katalon.wsaut.core.entity.User;
+import com.katalon.wsaut.core.service.UserService;
 
 @RestController
 public class UserController {

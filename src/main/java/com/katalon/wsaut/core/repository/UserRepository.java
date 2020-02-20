@@ -1,12 +1,12 @@
 package com.katalon.wsaut.core.repository;
 
-import com.katalon.wsaut.core.entity.User;
+import java.util.List;
 
-import org.example.webservice.Gender;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import java.util.List;
+import com.katalon.wsaut.core.entity.Gender;
+import com.katalon.wsaut.core.entity.User;
 
 @Repository
 public interface UserRepository extends JpaRepository<User, Long> {
