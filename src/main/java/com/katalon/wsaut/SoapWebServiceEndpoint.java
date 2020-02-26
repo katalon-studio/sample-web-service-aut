@@ -32,7 +32,6 @@ import com.katalon.wsaut.webservice.UserSOAP;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 
-@Api
 @Endpoint
 public class SoapWebServiceEndpoint {
 	private static final String NAMESPACE_URI = "http://www.katalon.com/wsaut/webservice";
@@ -43,10 +42,9 @@ public class SoapWebServiceEndpoint {
 	@Autowired
 	Convertor convertor;
 	
-	@ApiOperation(value = "ttt")
+	
 	@PayloadRoot(namespace = NAMESPACE_URI, localPart = "getUserRequest")
 	@ResponsePayload
-	@GetMapping
 	public GetUserResponse getUserById(@RequestPayload GetUserRequest request) {
 		GetUserResponse userResponse = new GetUserResponse();
 		User user = userService.getById(request.getId());
