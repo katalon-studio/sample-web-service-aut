@@ -4,6 +4,11 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RestController;
 import org.springframework.ws.server.endpoint.annotation.Endpoint;
 import org.springframework.ws.server.endpoint.annotation.PayloadRoot;
 import org.springframework.ws.server.endpoint.annotation.RequestPayload;
@@ -24,6 +29,10 @@ import com.katalon.wsaut.webservice.UpdateUserRequest;
 import com.katalon.wsaut.webservice.UpdateUserResponse;
 import com.katalon.wsaut.webservice.UserSOAP;
 
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+
+@Api
 @Endpoint
 public class SoapWebServiceEndpoint {
 	private static final String NAMESPACE_URI = "http://www.katalon.com/wsaut/webservice";
@@ -34,14 +43,17 @@ public class SoapWebServiceEndpoint {
 	@Autowired
 	Convertor convertor;
 	
+	@ApiOperation(value = "ttt")
 	@PayloadRoot(namespace = NAMESPACE_URI, localPart = "getUserRequest")
 	@ResponsePayload
+	@GetMapping
 	public GetUserResponse getUserById(@RequestPayload GetUserRequest request) {
 		GetUserResponse userResponse = new GetUserResponse();
 		User user = userService.getById(request.getId());
 		userResponse.setUser(convertor.convertToSOAP(user));
 		return userResponse;
 	}
+	
 	
 	@PayloadRoot(namespace = NAMESPACE_URI, localPart = "getAllUserRequest")
 	@ResponsePayload
@@ -56,6 +68,7 @@ public class SoapWebServiceEndpoint {
 		return response;
 	}
 	
+	
 	@PayloadRoot(namespace = NAMESPACE_URI, localPart = "addUserRequest")
 	@ResponsePayload
 	public AddUserResponse addNewUser(@RequestPayload AddUserRequest request) {
@@ -65,6 +78,7 @@ public class SoapWebServiceEndpoint {
 		return response;
 	}
 	
+	
 	@PayloadRoot(namespace = NAMESPACE_URI, localPart = "updateUserRequest")
 	@ResponsePayload
 	public UpdateUserResponse updateUser(@RequestPayload UpdateUserRequest request) {
@@ -73,6 +87,7 @@ public class SoapWebServiceEndpoint {
 		response.setUser(convertor.convertToSOAP(updatedUser));
 		return response;
 	}
+	
 	
 	@PayloadRoot(namespace = NAMESPACE_URI, localPart = "deleteUserRequest")
 	@ResponsePayload
