@@ -4,18 +4,13 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RestController;
 import org.springframework.ws.server.endpoint.annotation.Endpoint;
 import org.springframework.ws.server.endpoint.annotation.PayloadRoot;
 import org.springframework.ws.server.endpoint.annotation.RequestPayload;
 import org.springframework.ws.server.endpoint.annotation.ResponsePayload;
 
-import com.katalon.wsaut.core.entity.User;
 import com.katalon.wsaut.core.entity.Convertor;
+import com.katalon.wsaut.core.entity.User;
 import com.katalon.wsaut.core.service.UserService;
 import com.katalon.wsaut.webservice.AddUserRequest;
 import com.katalon.wsaut.webservice.AddUserResponse;
@@ -28,9 +23,6 @@ import com.katalon.wsaut.webservice.GetUserResponse;
 import com.katalon.wsaut.webservice.UpdateUserRequest;
 import com.katalon.wsaut.webservice.UpdateUserResponse;
 import com.katalon.wsaut.webservice.UserSOAP;
-
-import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiOperation;
 
 @Endpoint
 public class SoapWebServiceEndpoint {
