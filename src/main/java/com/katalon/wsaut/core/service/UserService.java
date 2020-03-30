@@ -19,6 +19,11 @@ public class UserService {
     public User getById(long id) {
         return userRepository.findOne(id);
     }
+    
+    public User getByBodyContent(User user) {
+    	
+        return userRepository.findOne(user.getId());
+    }
 
     public List<User> list(Gender gender, Integer age) {
         if (gender == null && age == null) {
@@ -32,6 +37,11 @@ public class UserService {
         }
     }
 
+    public User create() {
+        User newUser = createNewUser("","" , Gender.UNKNOWN, 0, null);
+        return userRepository.save(newUser);
+    }
+    
     public User create(User user) {
         User newUser = createNewUser(
                 user.getUsername(),

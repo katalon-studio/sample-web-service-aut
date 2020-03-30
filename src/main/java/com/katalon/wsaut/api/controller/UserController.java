@@ -46,7 +46,21 @@ public class UserController {
     public User getById(@PathVariable long id)  {
         return userService.getById(id);
     }
+    
+    @GetMapping(value = Resources.User.COLLECTIONS_WITH_BODY, produces = MediaType.APPLICATION_JSON_VALUE)
+    @ResponseBody
+    public User getUserByBody(@RequestBody User user)  {
+        return userService.getByBodyContent(user);
+    }
 
+    @PostMapping(value = Resources.User.COLLECTIONS_CONSUME_JSON_NO_BODY,
+            
+            produces = MediaType.APPLICATION_JSON_VALUE)
+    @ResponseBody
+    public User createUserWithJsonContentTypeWithoutBody() {
+    	return userService.create();
+    }
+    
     @PostMapping(value = Resources.User.COLLECTIONS_CONSUME_JSON,
                 consumes = MediaType.APPLICATION_JSON_VALUE,
                 produces = MediaType.APPLICATION_JSON_VALUE)
