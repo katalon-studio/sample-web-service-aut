@@ -1,12 +1,14 @@
 package com.katalon.wsaut.core.service;
 
-import com.katalon.wsaut.core.entity.Gender;
-import com.katalon.wsaut.core.entity.User;
-import com.katalon.wsaut.core.repository.UserRepository;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
+import com.katalon.wsaut.core.entity.Gender;
+import com.katalon.wsaut.core.entity.User;
+import com.katalon.wsaut.core.repository.UserRepository;
+
 
 @Service
 public class UserService {
@@ -16,6 +18,11 @@ public class UserService {
 
     public User getById(long id) {
         return userRepository.findOne(id);
+    }
+    
+    public User getByBodyContent(User user) {
+    	
+        return userRepository.findOne(user.getId());
     }
 
     public List<User> list(Gender gender, Integer age) {
@@ -30,6 +37,11 @@ public class UserService {
         }
     }
 
+    public User create() {
+        User newUser = createNewUser("","", Gender.UNKNOWN, 0, null);
+        return userRepository.save(newUser);
+    }
+    
     public User create(User user) {
         User newUser = createNewUser(
                 user.getUsername(),
