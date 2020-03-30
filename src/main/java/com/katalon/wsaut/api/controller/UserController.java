@@ -47,13 +47,13 @@ public class UserController {
         return userService.getById(id);
     }
     
-    @GetMapping(value = Resources.User.COLLECTIONS_WITH_BODY, produces = MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping(value = Resources.User.COLLECTIONS_CONSUME_JSON, produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseBody
     public User getUserByBody(@RequestBody User user)  {
         return userService.getByBodyContent(user);
     }
 
-    @PostMapping(value = Resources.User.COLLECTIONS_CONSUME_JSON_NO_BODY,           
+    @PostMapping(value = Resources.User.COLLECTIONS_CONSUME_NO_BODY,           
             	produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseBody
     public User createUserWithoutBody() {

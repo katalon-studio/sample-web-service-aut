@@ -7,15 +7,13 @@ public class Resources {
     private static final String ID = "/{id}";
 
     public static final class User {
-        public static final String COLLECTIONS = API + "/users";
-        
-        public static final String COLLECTIONS_WITH_BODY = COLLECTIONS + "/accept-body";
+        public static final String COLLECTIONS = API + "/users";       
 
         public static final String COLLECTIONS_ACCEPT_JSON = COLLECTIONS + "/accept-json";
 
         public static final String COLLECTIONS_ACCEPT_XML = COLLECTIONS + "/accept-xml";
 
-        public static final String COLLECTIONS_CONSUME_JSON_NO_BODY = COLLECTIONS + "/json/no-body";
+        public static final String COLLECTIONS_CONSUME_NO_BODY = COLLECTIONS + "/json/no-body";
         
         public static final String COLLECTIONS_CONSUME_JSON = COLLECTIONS + "/json";
 
