@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <schema xmlns="http://www.w3.org/2001/XMLSchema" 
-targetNamespace="http://www.katalon.com/wsaut/webservice" xmlns:tns="http://www.katalon.com/wsaut/webservice" elementFormDefault="qualified">
+targetNamespace="http://www.katalon.com/wsaut/webservice" xmlns:tns="http://www.katalon.com/wsaut/webservice"
+xmlns:xmime="http://www.w3.org/2005/05/xmlmime" elementFormDefault="qualified">
 
 	<element name="getUserRequest">
 		<complexType>
@@ -99,7 +100,7 @@ targetNamespace="http://www.katalon.com/wsaut/webservice" xmlns:tns="http://www.
 			<element name="password" type="string"></element>
 			<element name="gender" type="tns:Gender"></element>
 			<element name="age" type="int"></element>
-			<element name="avatar" type="base64Binary"></element>
+			<element name="avatar" type="base64Binary" xmime:expectedContentTypes="image/jpeg"></element>
 		</sequence>
 	</complexType>
 </schema>

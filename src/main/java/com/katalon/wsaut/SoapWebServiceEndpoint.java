@@ -3,6 +3,8 @@ package com.katalon.wsaut;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import javax.xml.ws.soap.MTOM;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ws.server.endpoint.annotation.Endpoint;
 import org.springframework.ws.server.endpoint.annotation.PayloadRoot;
@@ -24,6 +26,7 @@ import com.katalon.wsaut.webservice.UpdateUserRequest;
 import com.katalon.wsaut.webservice.UpdateUserResponse;
 import com.katalon.wsaut.webservice.UserSOAP;
 
+@MTOM(enabled=true, threshold=4096)
 @Endpoint
 public class SoapWebServiceEndpoint {
 	private static final String NAMESPACE_URI = "http://www.katalon.com/wsaut/webservice";
