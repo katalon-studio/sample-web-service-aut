@@ -26,7 +26,6 @@ import com.katalon.wsaut.webservice.UpdateUserRequest;
 import com.katalon.wsaut.webservice.UpdateUserResponse;
 import com.katalon.wsaut.webservice.UserSOAP;
 
-@MTOM(enabled=true, threshold=4096)
 @Endpoint
 public class SoapWebServiceEndpoint {
 	private static final String NAMESPACE_URI = "http://www.katalon.com/wsaut/webservice";
