@@ -44,11 +44,14 @@ public class WebServiceConfig extends WsConfigurationSupport{
     public DefaultMethodEndpointAdapter defaultMethodEndpointAdapter() {
         List<MethodArgumentResolver> argumentResolvers = new ArrayList<>();
         argumentResolvers.add(methodProcessor());
+
         List<MethodReturnValueHandler> returnValueHandlers = new ArrayList<>();
         returnValueHandlers.add(methodProcessor());
+
         DefaultMethodEndpointAdapter adapter = new DefaultMethodEndpointAdapter();
         adapter.setMethodArgumentResolvers(argumentResolvers);
         adapter.setMethodReturnValueHandlers(returnValueHandlers);
+
         return adapter;
     }
 	

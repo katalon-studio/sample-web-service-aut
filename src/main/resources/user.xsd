@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<schema xmlns="http://www.w3.org/2001/XMLSchema" 
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
 targetNamespace="http://www.katalon.com/wsaut/webservice" xmlns:tns="http://www.katalon.com/wsaut/webservice"
 xmlns:xmime="http://www.w3.org/2005/05/xmlmime" elementFormDefault="qualified">
 
@@ -10,7 +10,7 @@ xmlns:xmime="http://www.w3.org/2005/05/xmlmime" elementFormDefault="qualified">
 			</sequence>
 		</complexType>
 	</element>
-	
+
 	<element name="getUserResponse">
 		<complexType>
 			<sequence>
@@ -18,7 +18,7 @@ xmlns:xmime="http://www.w3.org/2005/05/xmlmime" elementFormDefault="qualified">
 			</sequence>
 		</complexType>
 	</element>
-	
+
 	<element name="getAllUserRequest">
 		<complexType>
 			<sequence>
@@ -27,15 +27,15 @@ xmlns:xmime="http://www.w3.org/2005/05/xmlmime" elementFormDefault="qualified">
 			</sequence>
 		</complexType>
 	</element>
-	
-	<element name="getAllUserResponse">		
+
+	<element name="getAllUserResponse">
 		<complexType>
 			<sequence>
 				<element name="user" type="tns:UserSOAP" minOccurs="0" maxOccurs="unbounded"></element>
 			</sequence>
 		</complexType>
 	</element>
-	
+
 	<element name="addUserRequest">
 		<complexType>
 			<sequence>
@@ -43,15 +43,15 @@ xmlns:xmime="http://www.w3.org/2005/05/xmlmime" elementFormDefault="qualified">
 			</sequence>
 		</complexType>
 	</element>
-	
-	<element name="addUserResponse">		
+
+	<element name="addUserResponse">
 		<complexType>
 			<sequence>
 				<element name="user" type="tns:UserSOAP"></element>
 			</sequence>
 		</complexType>
 	</element>
-	
+
 	<element name="updateUserRequest">
 		<complexType>
 			<sequence>
@@ -60,31 +60,31 @@ xmlns:xmime="http://www.w3.org/2005/05/xmlmime" elementFormDefault="qualified">
 			</sequence>
 		</complexType>
 	</element>
-	
-	<element name="updateUserResponse">		
+
+	<element name="updateUserResponse">
 		<complexType>
 			<sequence>
 				<element name="user" type="tns:UserSOAP"></element>
 			</sequence>
 		</complexType>
 	</element>
-	
+
 	<element name="deleteUserRequest">
 		<complexType>
 			<sequence>
-				<element name="id" type="long"></element>			
+				<element name="id" type="long"></element>
 			</sequence>
 		</complexType>
 	</element>
-	
-	<element name="deleteUserResponse">		
+
+	<element name="deleteUserResponse">
 		<complexType>
 			<sequence>
 				<element name="notification" type="string"></element>
 			</sequence>
 		</complexType>
 	</element>
-	
+
 	<simpleType name="Gender">
 		<restriction base="string">
 			<enumeration value="MALE"></enumeration>
@@ -92,7 +92,7 @@ xmlns:xmime="http://www.w3.org/2005/05/xmlmime" elementFormDefault="qualified">
 			<enumeration value="UNKNOWN"></enumeration>
 		</restriction>
 	</simpleType>
-	
+
 	<complexType name="UserSOAP">
 		<sequence>
 			<element name="id" type="long"></element>
