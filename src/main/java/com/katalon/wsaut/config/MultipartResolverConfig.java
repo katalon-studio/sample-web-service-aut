@@ -2,19 +2,26 @@ package com.katalon.wsaut.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.core.annotation.Order;
 import org.springframework.web.multipart.commons.CommonsMultipartResolver;
+import org.springframework.web.multipart.support.MultipartFilter;
 
 @Configuration
 public class MultipartResolverConfig {
+  
   @Bean
   public CommonsMultipartResolver multipartResolver() {
-    return new CommonsMultipartResolver();
+      CommonsMultipartResolver multipart = new CommonsMultipartResolver();
+      multipart.setMaxUploadSize(3 * 1024 * 1024);
+      return multipart;
   }
 
   @Bean
-  public CommonsMultipartResolver filterMultipartResolver() {
-    final CommonsMultipartResolver resolver = new CommonsMultipartResolver();
-    return resolver;
+  @Order(0)
+  public MultipartFilter multipartFilter() {
+      MultipartFilter multipartFilter = new MultipartFilter();
+      multipartFilter.setMultipartResolverBeanName("multipartResolver");
+      return multipartFilter;
   }
 }
 
